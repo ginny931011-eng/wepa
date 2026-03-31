@@ -457,11 +457,12 @@
     if (e.target.closest('#ui')) return;
 
     if (heroVisible) {
-      hero.style.opacity = '0';
-      hero.style.pointerEvents = 'none';
-      setTimeout(() => hero.remove(), 500);
-      heroVisible = false;
-    }
+  const currentHero = document.getElementById('hero');
+  if (currentHero) currentHero.style.opacity = '0';
+  if (currentHero) setTimeout(() => currentHero.remove(), 500);
+  heroVisible = false;
+  return;
+}
 
     // Ripple always
     const ripple = document.createElement('div');
