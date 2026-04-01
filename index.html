@@ -280,11 +280,25 @@
     mix-blend-mode: multiply;
     display: block;
   }
+ #protest-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1.2);
+  pointer-events: none;
+}
 </style>
 </head>
 <body>
 
 <div id="wall">
+ <video id="protest-video" autoplay muted loop playsinline>
+  <source src="protest.mp4" type="video/mp4">
+</video>
   <div id="hero">
     <img id="hero-word" src="圖層 1.png" style="width: clamp(300px, 55vw, 700px); height: auto;">
     <div id="hero-sub">¡PA'LANTE SIEMPRE!</div>
